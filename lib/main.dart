@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+void main() async{
+  await Hive.initFlutter();
+
+  branchBox = await Hive.openBox(branchBoxName);
+  itemBox= await Hive.openBox(itemBoxName);
+  
+
+  runApp(const MyApp());
+}
+late Box branchBox;
+late Box itemBox;
+
+const String branchBoxName='branches';
+const String itemBoxName='items';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
